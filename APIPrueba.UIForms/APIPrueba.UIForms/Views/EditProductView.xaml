@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:cr="clr-namespace:APIPrueba.UIForms.CustomRender" xmlns:vm="clr-namespace:APIPrueba.UIForms.ViewModels"
+             mc:Ignorable="d"
+             Title="Editando Producto"
+             x:Class="APIPrueba.UIForms.Views.EditProductView">
+    <ContentPage.BindingContext>
+        <vm:UpdateProductViewModel></vm:UpdateProductViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid BackgroundColor="#CED9E7">
+            <ScrollView>
+                <Grid>
+                    <Frame 
+                          
+                       Padding="0"
+                       CornerRadius="100" 
+                       HasShadow="False"
+                                            Grid.Row="0"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="3" 
+                    HeightRequest="120"
+                    VerticalOptions="End"
+                                       HorizontalOptions="CenterAndExpand"
+                                   WidthRequest="120" IsClippedToBounds="True">
+                        <Image Source="{Binding productempty}"                                
+                                           VerticalOptions="Center"
+                                       HorizontalOptions="Center">
+                        </Image>
+                    </Frame>
+                    <Frame Padding="1"
+                       BorderColor="White"
+                       
+                               CornerRadius="55"
+                               VerticalOptions="End"
+                               HorizontalOptions="Center"
+                               Grid.Row="0"
+                               Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                       Margin="90,90,0,0"
+                       
+                               BackgroundColor="#111111">
+                        <Label Text="&#xf303;"
+                                   VerticalOptions="End"
+                                   VerticalTextAlignment="Start"
+                                   FontSize="20"
+                                   HorizontalTextAlignment="Center"
+                                   HeightRequest="30"
+                                   FontFamily="{StaticResource FontAwesomeSolid}"
+                                   WidthRequest="30"
+                                   TextColor="White" />
+                    </Frame>
+                    <StackLayout Grid.Column="0" Grid.ColumnSpan="3"
+                             
+                             Grid.Row="1" Grid.RowSpan="5"
+                             Margin="20,0,20,0"
+                             HorizontalOptions="FillAndExpand"
+                    >
+                        <Label Text="Nombre:" FontSize="Large" FontAttributes="Bold"></Label>
+                        <cr:UIEntryRender Text="{Binding NameProduct}" Placeholder="EJ: Botella de Agua" VerticalTextAlignment="Center"></cr:UIEntryRender>
+                        <Label Text="Código de barras:" FontSize="Large" FontAttributes="Bold"></Label>
+                        <cr:UIEntryRender Text="{Binding CodeBar}" Placeholder="EJ: 2372836" Keyboard="Numeric" VerticalTextAlignment="Center"></cr:UIEntryRender>
+                        <Label Text="Descripción:" FontSize="Large" FontAttributes="Bold"></Label>
+                        <cr:UIEntryRender Text="{Binding DescProduct}" Placeholder="EJ: Botella de plastico" VerticalTextAlignment="Center"></cr:UIEntryRender>
+                        <Label Text="Cantidad:" FontSize="Large" FontAttributes="Bold"></Label>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <cr:UIEntryRender Text="{Binding StockProduct}" HorizontalOptions="FillAndExpand" Placeholder="EJ: 100" Keyboard="Numeric" VerticalTextAlignment="Center">
+                            </cr:UIEntryRender>
+                            <Button Text="+" TextColor="White"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                WidthRequest="20"
+                                Command="{Binding AddStockCommand}"
+                                CornerRadius="5"
+                                BackgroundColor="#124385"
+                                    HorizontalOptions="FillAndExpand"></Button>
+                            <Button Text="-" TextColor="White"
+                                FontSize="30"
+                               Command="{Binding RemoveStockCommand}"
+                                WidthRequest="20"
+                                FontAttributes="Bold"
+                                    HorizontalOptions="FillAndExpand"
+                                CornerRadius="5"
+                                BackgroundColor="#124385"></Button>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                            <Button Text="Guardar Producto" TextColor="White"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                HeightRequest="60"
+                                CornerRadius="5"
+                                Command="{Binding AddProductCommand}"
+                                BackgroundColor="#124385"></Button>
+                            <Button Text="Cancelar" TextColor="White"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Command="{Binding CancelCommand}"
+                                HeightRequest="60"
+                                CornerRadius="5"
+                                BackgroundColor="#111111"></Button>
+                        </StackLayout>
+                    </StackLayout>
+
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

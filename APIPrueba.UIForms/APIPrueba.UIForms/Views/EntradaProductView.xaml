@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cr="clr-namespace:APIPrueba.UIForms.CustomRender"
+             mc:Ignorable="d"
+             x:Class="APIPrueba.UIForms.Views.EntradaProductView">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#CED9E7">
+            <Grid 
+                          Margin="30,0,30,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout
+                    VerticalOptions="CenterAndExpand"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="1">
+                    <Label Text="Nº:" FontSize="Large" FontAttributes="Bold"></Label>
+                    <cr:UIEntryRender Placeholder="EJ: 0001" Keyboard="Numeric" VerticalTextAlignment="Center"></cr:UIEntryRender>
+                </StackLayout>
+                <StackLayout Grid.Column="0" Grid.ColumnSpan="3"
+                             
+                             Grid.Row="2" Grid.RowSpan="3"
+                    >
+                    <Frame HasShadow="False"
+                           BackgroundColor="#6089bf"
+                           IsClippedToBounds="True"
+                           CornerRadius="10"
+                           VerticalOptions="Center"
+                                       HorizontalOptions="Center">
+                        <ListView BackgroundColor="#6089bf"
+                                  SeparatorVisibility="None"
+                                  SelectionMode="Single"
+                                  
+                              >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout>
+                                            <Label Text="" FontSize="Medium" FontAttributes="Bold"></Label>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Frame>
+
+
+                    <StackLayout Margin="40"></StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                        <Button Text="Guardar Producto" TextColor="White"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                
+                                HeightRequest="60"
+                                CornerRadius="5"
+                                BackgroundColor="#124385"></Button>
+
+                    </StackLayout>
+                </StackLayout>
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

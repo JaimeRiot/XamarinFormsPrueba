@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="APIPrueba.UIForms.CustomRender.RenderMenuPartial">
+    <ContentView.Content>
+        <Grid>
+            <Grid ColumnSpacing="0"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="Start"
+                  RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="3"
+                       Grid.ColumnSpan="3"
+                       BackgroundColor="#0C2D5A"
+                         CornerRadius="0"
+                       HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"/>
+
+                <StackLayout Orientation="Horizontal"
+                             Grid.Row="1"
+                            
+                             Grid.Column="0"
+                             Grid.ColumnSpan="3">
+                    <Label HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                           Margin="20,0,0,0"
+                           Text="&#xf0c9;"
+                           FontSize="24"
+                           TextColor="White"
+                           FontFamily="{StaticResource FontAwesomeSolid}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="ImgMenu" Tapped="ImgMenu_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                       x:Name="LblTitle"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                        Margin="0,0,0,0"
+                        HorizontalOptions="Start"
+                           VerticalOptions="CenterAndExpand"
+                       FontSize="24"></Label>
+                </StackLayout>
+            </Grid>
+            <Grid x:Name="GridOverlay"
+                  IsVisible="False"
+                  ColumnSpacing="0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout BackgroundColor="#161C2A"
+                             x:Name="SlMenu">
+                    <Grid BackgroundColor="#161C2A" 
+                          HeightRequest="150" Margin="0,40,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="120" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Frame 
+                          
+                       Padding="0"
+                       CornerRadius="100" 
+                       HasShadow="False"
+                            Grid.Row="0"
+                                       HorizontalOptions="Center"
+                                   WidthRequest="120" IsClippedToBounds="True">
+                            <Image Source="{Binding imgprofile}"                                
+                                           VerticalOptions="Center"
+                                       HorizontalOptions="Center">
+                            </Image>
+                        </Frame>
+
+
+                        <StackLayout Grid.Row="1"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     Spacing="0"
+                                     Margin="15,0,15,0">
+                            <Label Text="Usuario A&amp;B"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   TextColor="White" />
+                        </StackLayout>
+                        <StackLayout Grid.Row="3"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     Spacing="0"
+                                     Margin="15,0,15,0">
+                            <Label Text="Administrador"
+                                   FontSize="Small"
+                                   FontAttributes="Bold"
+                                   TextColor="White" />
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout Spacing="30"
+                                 Orientation="Horizontal"
+                                 Margin="20,30,0,0">
+                        <Label Text="&#xf0ae;"
+                               FontSize="20"
+                               TextColor="White"
+                               HeightRequest="30"
+                               VerticalTextAlignment="Center"
+                               FontFamily="{StaticResource FontAwesomeSolid}"
+                               WidthRequest="30" />
+                        <Label Text="Productos"
+                               TextColor="White"
+                               HeightRequest="50"
+                               FontAttributes="Bold"
+                               VerticalTextAlignment="Center"
+                               FontSize="20" />
+                        <StackLayout.GestureRecognizers>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Spacing="30"
+                                 Orientation="Horizontal"
+                                 Margin="20,0,0,0">
+                        <Label Text="&#xf07a;"
+                               FontSize="20"
+                               TextColor="White"
+                               VerticalTextAlignment="Center"
+                               FontFamily="{StaticResource FontAwesomeSolid}"
+                               HeightRequest="30"
+                               WidthRequest="30" />
+                        <Label Text="Reportes"
+                               TextColor="White"
+                               HeightRequest="50"
+                               FontAttributes="Bold"
+                               VerticalTextAlignment="Center"
+                               FontSize="20" />
+                        <StackLayout.GestureRecognizers>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Spacing="30"
+                                 Orientation="Horizontal"
+                                 Margin="20,0,0,0">
+                        <Label Text="&#xf086;"
+                               FontSize="20"
+                               TextColor="White"
+                               VerticalTextAlignment="Center"
+                               FontFamily="{StaticResource FontAwesomeRegular}"
+                               HeightRequest="30"
+                               WidthRequest="30" />
+                        <Label Text="Perfil"
+                               TextColor="White"
+                               HeightRequest="50"
+                               FontAttributes="Bold"
+                               VerticalTextAlignment="Center"
+                               FontSize="20" />
+                        <StackLayout.GestureRecognizers>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Spacing="30"
+                                 Orientation="Horizontal"
+                                 Margin="20,0,0,0">
+                        <Label Text="&#xf011;"
+                               TextColor="White"
+                               FontFamily="{StaticResource FontAwesomeSolid}"
+                               HeightRequest="30"
+                               FontSize="20"
+                               VerticalTextAlignment="Center"
+                               WidthRequest="30" />
+                        <Label Text="Configuración"
+                               TextColor="White"
+                               HeightRequest="50"
+                               FontAttributes="Bold"
+                               VerticalTextAlignment="Center"
+                               FontSize="20" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapLogout"/>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout Spacing="30"
+                                 Orientation="Horizontal"
+                                 Margin="20,0,0,0">
+                        <Label Text="&#xf011;"
+                               TextColor="White"
+                               FontFamily="{StaticResource FontAwesomeSolid}"
+                               HeightRequest="30"
+                               FontSize="20"
+                               VerticalTextAlignment="Center"
+                               WidthRequest="30" />
+                        <Label Text="Cerrar Sesión"
+                               TextColor="White"
+                               HeightRequest="50"
+                               FontAttributes="Bold"
+                               VerticalTextAlignment="Center"
+                               FontSize="20" />
+                        <StackLayout.GestureRecognizers>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </StackLayout>
+                <BoxView Grid.Column="1"
+                         x:Name="BoxViewLayer">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapCloseMenu" Tapped="TapCloseMenu_Tapped" />
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

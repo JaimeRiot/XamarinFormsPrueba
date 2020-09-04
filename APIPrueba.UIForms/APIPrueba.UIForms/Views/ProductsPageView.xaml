@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cr="clr-namespace:APIPrueba.UIForms.CustomRender" xmlns:vm="clr-namespace:APIPrueba.UIForms.ViewModels"
+             mc:Ignorable="d"
+             x:Class="APIPrueba.UIForms.Views.ProductsPageView">
+
+    <ContentPage.BindingContext>
+        <vm:GetProductsViewModel></vm:GetProductsViewModel>
+    </ContentPage.BindingContext>
+        <ContentPage.Content>
+        <Grid BackgroundColor="#CED9E7">
+            <Grid 
+                          Margin="30,20,30,0">
+
+
+                <StackLayout Grid.Column="0" Grid.ColumnSpan="3"
+                             
+                             Grid.Row="0"
+                    >
+                    <Frame HasShadow="False"
+                           BackgroundColor="#6089bf"
+                           IsClippedToBounds="True"
+                           CornerRadius="10"
+                           VerticalOptions="Center"
+                                       HorizontalOptions="Center">
+                        <ListView BackgroundColor="#6089bf"
+                                  ItemsSource="{Binding Items}"
+                                  HasUnevenRows="False"
+                                  SelectedItem="{Binding SelectedEmployee,Mode=TwoWay}"
+                                  SeparatorVisibility="None"
+                                  SelectionMode="Single"
+                                  
+                              >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding stock}" HorizontalOptions="Start" FontSize="Medium" FontAttributes="Bold"></Label>
+                                            <Label Text="{Binding nameproduct}" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold"></Label>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Frame>
+                    <Button Text="Agregar Producto" CornerRadius="5" TextColor="White" Clicked="Button_Clicked" BackgroundColor="#124385"></Button>
+                </StackLayout>
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cr="clr-namespace:APIPrueba.UIForms.CustomRender"
+             mc:Ignorable="d"
+             Title="Inventario A&amp;B"
+             x:Class="APIPrueba.UIForms.Views.HomeView">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#CED9E7">
+            <Frame HorizontalOptions="FillAndExpand" CornerRadius="5" IsClippedToBounds="True" BackgroundColor="#124385" Margin="5,20,5,0" >
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="&#xf0ae;"
+                       FontSize="40"
+                       Margin="5"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       FontFamily="{StaticResource FontAwesomeSolid}"
+                       VerticalTextAlignment="Center">
+                    </Label>
+                    <Label Text="Producto"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalTextAlignment="Center"></Label>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SeeProducts"></TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <StackLayout Orientation="Horizontal">
+
+                <Frame HorizontalOptions="FillAndExpand" CornerRadius="5" IsClippedToBounds="True" BackgroundColor="#124385" Margin="5,20,5,0" >
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="&#xf0ae;"
+                       FontSize="40"
+                       Margin="5"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       FontFamily="{StaticResource FontAwesomeSolid}"
+                       VerticalTextAlignment="Center">
+                        </Label>
+                        <Label Text="Nueva entrada"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Start"
+                       VerticalTextAlignment="Center"></Label>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SeeGet"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame HorizontalOptions="FillAndExpand" CornerRadius="5" IsClippedToBounds="True" BackgroundColor="#124385" Margin="5,20,5,0" >
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="&#xf0ae;"
+                       FontSize="40"
+                       Margin="5"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       FontFamily="{StaticResource FontAwesomeSolid}"
+                       VerticalTextAlignment="Center">
+                        </Label>
+                        <Label Text="Nueva salida"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Start"
+                       VerticalTextAlignment="Center"></Label>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SeeSale"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+            <Frame HorizontalOptions="FillAndExpand" CornerRadius="5" IsClippedToBounds="True" BackgroundColor="#124385" Margin="5,20,5,0" >
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="&#xf0ae;"
+                       FontSize="40"
+                       Margin="5"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       FontFamily="{StaticResource FontAwesomeSolid}"
+                       VerticalTextAlignment="Center">
+                    </Label>
+                    <Label Text="Reporte"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="StartAndExpand"
+                       VerticalTextAlignment="Center"></Label>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
